@@ -1,51 +1,38 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+
 
 html{
     cursor: none;
-    -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  
+            scrollbar-width: none;  
 
     scroll-behavior: smooth;
+    
 
 }
+
 body{
   font-family: 'Libre Baskerville';
 }
 
+
 @layer utilities{
-        /* Hide scrollbar for Chrome, Safari and Opera */
+        
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
-       /* Hide scrollbar for IE, Edge and Firefox */
+       
         .no-scrollbar {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+            -ms-overflow-style: none;  
+            scrollbar-width: none;  
       }
 }
-
-.ScrollPics:nth-child(1) figure {
-    background-image: url(../resources/ib1.jpg);
-}
-
-.ScrollPics:nth-child(2) figure {
-    background-image: url(../resources/ib2.jpg);
-}
-
-.ScrollPics:nth-child(3) figure {
-    background-image: url(../resources/ib3.jpg);
-}
-
 
 .ScrollPics h2 {
     font-size: 6rem;
 }
 
-.ScrollPics h1 {
-    font-size: 8rem;
-}
+
 .ScrollPics {
     width: 100%;
     height: 100vh;
@@ -68,24 +55,37 @@ body{
   
   .SC_title {
     display: flex;
-    align-items: center;
-    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
     padding: 0 1rem;
     width: 100%;
     height: 100%;
-    color: white;
     text-align: center;
   }
-  .SC_content{
-    width: 100%;
-    height: 100%;
+
+  .SC_content {
+    color: white;
     display: flex;
     position: fixed;
-    color: white;
-  }
+    top: 0;
+    left: 0;
+    padding: 0 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.SC_scrollable {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+/* Optional: Adjust scrollbar styles */
+.SC_scrollable::-webkit-scrollbar {
+    display: none;
+}
 
 
   .circle {
@@ -99,3 +99,33 @@ body{
     pointer-events: none;
     z-index: 99999999; /* so that it stays on top of all other elements */
   }
+
+  .perspectiveDiv {
+    transform:
+      rotateX(51deg)
+      rotateZ(43deg);
+    transform-style: preserve-3d;
+    border-radius: 32px;
+    box-shadow:
+      1px 1px 0 1px #f9f9fb,
+      -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+      28px 28px 28px 0 rgba(34, 33, 81, 0.25);
+    transition:
+      .4s ease-in-out transform,
+      .4s ease-in-out box-shadow;
+  
+    &:hover {
+      transform:
+        translate3d(0px, 0px, 0px)
+        rotateX(0deg)
+        rotateZ(0deg);
+      box-shadow:
+        1px 1px 0 1px #f9f9fb,
+        -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+        54px 54px 28px -10px rgba(34, 33, 81, 0.15);
+    }
+  }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

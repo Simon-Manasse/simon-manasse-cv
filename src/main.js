@@ -119,11 +119,21 @@ export const navbarAnimation = () => {
 
 export function navbarScrollAnimation() {
     let dots = document.getElementsByClassName('navBar');
+    const div = document.getElementById('cardContainer');
+    div.style.transition = "all 1s";
     window.onscroll = () => {
-        console.log(window.scrollY)
-        const thresholds = [935, 1870, 2805, 3720];
+        const thresholds = [835, 1770, 2705, 3620];
         let index = thresholds.findIndex(threshold => window.scrollY < threshold);
         navbarStyleChange(dots, index === -1 ? 5 : index + 1);
+        if (window.scrollY > 700) {
+            div.style.opacity = "1"
+            div.style.top = "0"
+        }
+        else {
+            div.style.opacity = "0"
+            div.style.top = "50rem"
+        }
+
     }
 }
 
@@ -137,4 +147,110 @@ function navbarStyleChange(dots, id) {
         div.style.width = size[valueId];
         div.style.opacity = opacity[valueId];
     }
+}
+export const scrollOnMouse = () => {
+    let isMouseDown = false;
+    let startX;
+    let scrollLeft;
+    let requestId;
+
+    const container = document.getElementById('cardContainer');
+    const originalScrollSnapType = container.style.scrollSnapType;
+
+    container.addEventListener('mousedown', (e) => {
+        isMouseDown = true;
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+        container.style.scrollSnapType = 'none'; // Disable snapping temporarily
+    });
+
+    container.addEventListener('mouseup', () => {
+        isMouseDown = false;
+        cancelAnimationFrame(requestId);
+        container.style.scrollSnapType = originalScrollSnapType; // Re-enable snapping
+    });
+
+    container.addEventListener('mouseleave', () => {
+        isMouseDown = false;
+        cancelAnimationFrame(requestId);
+        container.style.scrollSnapType = originalScrollSnapType; // Re-enable snapping
+    });
+
+    container.addEventListener('mousemove', (e) => {
+        if (!isMouseDown) return;
+
+        e.preventDefault();
+
+        const x = e.pageX - container.offsetLeft;
+        const walk = (x - startX) * 1.5; // Adjust the scrolling speed as needed
+
+        requestId = requestAnimationFrame(() => {
+            container.scrollLeft = scrollLeft - walk;
+        });
+    });
+};
+
+export const nextCard = () => {
+    const faller = document.getElementById('faller');
+    const hz = document.getElementById('hz');
+    const next = document.getElementById('nextCard');
+    let fallerZ= 50;
+   let hzZ= 51;
+    const lower = {
+        before: {
+            left: "70rem",
+            top: "8rem",
+            zIndex: "50"
+        },
+        after: {
+            left: "42rem",
+            top: "8rem",
+            zIndex: "51"
+        }
+    }
+    const upper = {
+        before: {
+            top: "1rem",
+            left: "20rem",
+            zIndex: "51"
+        },
+        after: {
+            top: "9rem",
+            left: "42rem",
+            zIndex: "50"
+        },
+    };
+    
+
+
+    next.addEventListener('click', () => {
+        if(parseInt(fallerZ) < parseInt(hzZ)){
+            console.log("true")
+            changeCardPlace(faller, lower)
+            changeCardPlace(hz, upper);
+            fallerZ= 51;
+            hzZ= 50;
+        }else{
+            changeCardPlace(hz, lower)
+            changeCardPlace(faller, upper);
+            fallerZ= 50;
+            hzZ= 51;
+        }
+    });
+};
+
+
+function changeCardPlace(element, attributes) {
+    element.style.transition = "all 0.7s";
+    element.style.left = attributes.before.left;
+    element.style.top = attributes.before.top;
+    element.style.zIndex = attributes.before.zIndex
+
+    element.addEventListener('transitionend', () => {
+        // second stage
+        element.style.transition = "all 0.7s"
+        element.style.left = attributes.after.left;
+        element.style.top = attributes.after.top;
+        element.style.zIndex = attributes.after.zIndex
+    });
 }
