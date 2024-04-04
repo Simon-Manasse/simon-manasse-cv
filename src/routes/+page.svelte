@@ -1,13 +1,13 @@
 <script>
-    import Card from "$lib/components/Card.svelte";
+    import Card from "$lib/components/Hobby.svelte";
     import Example from "$lib/components/Example.svelte";
     import { onMount } from "svelte";
-    import {  init, navbarAnimation, navbarScrollAnimation, nextCard, scrollOnMouse, } from "../main";
+    import {  init, navbarAnimation, navbarScrollAnimation, nextCard, nextSkill, scrollOnMouse, } from "../main";
     import Welcome from "$lib/components/pages/Welcome.svelte";
     import Projects from "$lib/components/pages/Projects.svelte";
     import Education from "$lib/components/pages/Education.svelte";
-    import Skills from "$lib/components/pages/Skills.svelte";
     import Hobbies from "$lib/components/pages/Hobbies.svelte";
+    import Skills from "$lib/components/pages/Skills.svelte";
 
     onMount(()=>{
     init();
@@ -15,32 +15,16 @@
     navbarScrollAnimation()
     scrollOnMouse()
     nextCard()
+    nextSkill()
     });
     
 </script>
 
 <div class="">
     <!-- Mouse effect -->
+    {#each {length: 20} as _, i}
     <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
+    {/each}
 
 
     <!-- Navigation -->

@@ -194,8 +194,8 @@ export const nextCard = () => {
     const faller = document.getElementById('faller');
     const hz = document.getElementById('hz');
     const next = document.getElementById('nextCard');
-    let fallerZ= 50;
-   let hzZ= 51;
+    let fallerZ = 50;
+    let hzZ = 51;
     const lower = {
         before: {
             left: "70rem",
@@ -220,21 +220,21 @@ export const nextCard = () => {
             zIndex: "50"
         },
     };
-    
+
 
 
     next.addEventListener('click', () => {
-        if(parseInt(fallerZ) < parseInt(hzZ)){
+        if (parseInt(fallerZ) < parseInt(hzZ)) {
             console.log("true")
             changeCardPlace(faller, lower)
             changeCardPlace(hz, upper);
-            fallerZ= 51;
-            hzZ= 50;
-        }else{
+            fallerZ = 51;
+            hzZ = 50;
+        } else {
             changeCardPlace(hz, lower)
             changeCardPlace(faller, upper);
-            fallerZ= 50;
-            hzZ= 51;
+            fallerZ = 50;
+            hzZ = 51;
         }
     });
 };
@@ -254,3 +254,48 @@ function changeCardPlace(element, attributes) {
         element.style.zIndex = attributes.after.zIndex
     });
 }
+
+export const nextSkill = () => {
+    const grid = document.getElementById('skillGrid');
+    const buttonRight = document.getElementById('nextSkill');
+    const buttonLeft = document.getElementById('previousSkill');
+    let amount = 0;
+    const gridTransition = "all 1.5s";
+    const gridMarginBase = "0.75rem";
+    const gridMarginRight = "30rem";
+    const gridMarginStep = 30;
+    const lastGridElement = grid.childElementCount -1;
+    
+    grid.style.transition = gridTransition;
+    
+    buttonRight.addEventListener('click', () => {
+        amount++;
+        updateGridMargin();
+    });
+    
+    buttonLeft.addEventListener('click', () => {
+        amount--;
+        updateGridMargin();
+    });
+    
+    function updateGridMargin() {
+        if (amount > 0 && amount <= lastGridElement) {
+            grid.style.marginLeft = `-${(amount * gridMarginStep - 1)}rem`;
+            if (amount === lastGridElement) {
+                grid.style.marginRight = gridMarginRight;
+            } else {
+                grid.style.marginRight = "";
+            }
+        } else if (amount === -1) {
+            amount = lastGridElement;
+            grid.style.marginLeft = `-${(amount * gridMarginStep - 1)}rem`;
+            grid.style.marginRight = gridMarginRight;
+        } else {
+            grid.style.marginLeft = gridMarginBase;
+            grid.style.marginRight = "";
+            amount = 0;
+        }
+    }
+    
+
+};

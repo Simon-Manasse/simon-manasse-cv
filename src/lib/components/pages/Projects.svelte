@@ -1,6 +1,6 @@
 <script>
 
-    import Card from "../Card.svelte";
+    import Card from "../Hobby.svelte";
 
 </script>
 <section class="ScrollPics " id="Projects">
