@@ -2,7 +2,7 @@
     import Hobby from "../Hobby.svelte";
 
 </script>
-<section class="ScrollPics " id="Skills">
+<section class="ScrollPics " id="Hobbies">
     <!-- SC=ScrollPics -->
     <div class="SC_inner bg-zinc-700" id="section_2">
         <figure></figure>

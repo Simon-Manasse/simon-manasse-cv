@@ -2,7 +2,7 @@
     import Skill from "../Skill.svelte";
 
 </script>
-<section class="ScrollPics  " id="Hobbies">
+<section class="ScrollPics  " id="Skills">
     <!-- SC=ScrollPics -->
     <div class="SC_inner bg-zinc-600" id="section_2">
         <figure></figure>
