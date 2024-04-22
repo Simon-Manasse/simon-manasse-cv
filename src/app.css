@@ -14,6 +14,9 @@ html{
 body{
   font-family: 'Libre Baskerville';
 }
+#Skills h2{
+  font-family: 'Inconsolata';
+}
 
 
 @layer utilities{
@@ -140,8 +143,56 @@ body{
       conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--_g)) 100% 100% / var(--_p);
   }
 
+  .gallery {
+    --s: 150px; /* control the size */
+    --g: 10px;  /* control the gap */
+    display: flex;
+    grid-template-columns: repeat(6, var(--s));
+    grid-auto-rows: var(--s);
+    gap: var(--g);
+  }
+  
+  .gallery > img {
 
+    width: var(--s);
+    aspect-ratio: 0.866;
+    object-fit: contain;
+    /* clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0); */
+    transform: translate(var(--_x, 0), var(--_y, 0)) scale(var(--_t, 1));
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: 0.2s linear;
+    border-radius: 20%;
+  }
+  
+  .gallery > img:hover {
+    filter: grayscale(0);
+    z-index: 1;
+    --_t: 1.4;
+  }
 
+  .typewriter {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    /* letter-spacing: .15em; Adjust  */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
 
 @tailwind base;
 @tailwind components;

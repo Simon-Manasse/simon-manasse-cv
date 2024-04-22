@@ -1,8 +1,7 @@
 <script>
     import Card from "$lib/components/Hobby.svelte";
-    import Example from "$lib/components/Example.svelte";
     import { onMount } from "svelte";
-    import {  init, navbarAnimation, navbarScrollAnimation, nextCard, nextSkill, scrollOnMouse, } from "../main";
+    import {  init, navbarAnimation, navbarScrollAnimation, nextCard, nextSkill, scrollOnMouse } from "../main";
     import Welcome from "$lib/components/pages/Welcome.svelte";
     import Projects from "$lib/components/pages/Projects.svelte";
     import Education from "$lib/components/pages/Education.svelte";

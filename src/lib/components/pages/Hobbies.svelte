@@ -4,7 +4,7 @@
 </script>
 <section class="ScrollPics " id="Hobbies">
     <!-- SC=ScrollPics -->
-    <div class="SC_inner bg-zinc-700" id="section_2">
+    <div class="SC_inner bg-zinc-600" id="section_2">
         <figure></figure>
         <h2 class="SC_title justify-center text-white"><i>Hobbies</i></h2>
         <div class="SC_content  h-[35rem] w-[30rem] top-[10rem]  left-[44rem] cornerBorder overflow-clip">

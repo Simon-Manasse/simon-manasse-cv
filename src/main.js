@@ -117,6 +117,8 @@ export const navbarAnimation = () => {
 };
 
 
+let alreadyScrolled = false;
+
 export function navbarScrollAnimation() {
     let dots = document.getElementsByClassName('navBar');
     const div = document.getElementById('cardContainer');
@@ -133,7 +135,9 @@ export function navbarScrollAnimation() {
             div.style.opacity = "0"
             div.style.top = "50rem"
         }
-
+        if(window.scrollY >2800 && !alreadyScrolled){
+            typeAnimation();
+        }
     }
 }
 
@@ -240,6 +244,7 @@ export const nextCard = () => {
 };
 
 
+
 function changeCardPlace(element, attributes) {
     element.style.transition = "all 0.7s";
     element.style.left = attributes.before.left;
@@ -264,20 +269,20 @@ export const nextSkill = () => {
     const gridMarginBase = "0.75rem";
     const gridMarginRight = "30rem";
     const gridMarginStep = 30;
-    const lastGridElement = grid.childElementCount -1;
-    
+    const lastGridElement = grid.childElementCount - 1;
+
     grid.style.transition = gridTransition;
-    
+
     buttonRight.addEventListener('click', () => {
         amount++;
         updateGridMargin();
     });
-    
+
     buttonLeft.addEventListener('click', () => {
         amount--;
         updateGridMargin();
     });
-    
+
     function updateGridMargin() {
         if (amount > 0 && amount <= lastGridElement) {
             grid.style.marginLeft = `-${(amount * gridMarginStep - 1)}rem`;
@@ -296,6 +301,129 @@ export const nextSkill = () => {
             amount = 0;
         }
     }
-    
+
 
 };
+
+let i = 0;
+let speed = 150;
+let animationFinished = false;
+const skillText = "Skills";
+const backendText = "├── docker5├── git5│   └── versionControl.experience 5├── linux5│   ├── bash5│   │   └── microserviceGenerator.sh 5│   ├── c5│   │   └── linuxTweeking.c 5│   └── daily.os 5├── nodeJs5├── oop5│   ├── cSharp5│   ├── java5│   └── typeScript5│       └── curiousVillage.ts 5└── pandas5    └── python5        └── dataScience.py"
+const frontendText = "├── blender5│   ├── hackathon.blend 5│   └──wineProject.blend 5├── canva5│   └──slideShow.presentation 5├── figma5│   └──webDesigns.fig 5├── frameworks5│   ├── laravel5│   │   └── php5│   │       └── boatParking.php5│   └── svelteKit5│       └── javaScript5│           └── +ThisPage.svelte 5└── photoshop5    └── hobby.png"
+
+
+const typeAnimation = () => {
+    alreadyScrolled=true;
+    const firstSpan = document.getElementById('firstSkillSpan');
+    const secondSpan = document.getElementById('secondSkillSpan');
+    const backEndTree = document.getElementById('backEndTree');
+    const frontendEndTree = document.getElementById('frontEndTree');
+    const firstP = document.getElementById('backEndP');
+    const secondP = document.getElementById('frontEndP');
+
+    skillAnimation(firstSpan, 56.5, 0.9, skillText, firstP, () => {
+        addDot(firstP);
+        setTimeout(() => {
+            completeBackendCode();
+            drawTree(backendText, backEndTree);
+        }, 1000);
+    });
+
+    setTimeout(() => {
+        const secondDiv = document.getElementById('secondDiv');
+        secondDiv.style.display = 'block';
+        skillAnimation(secondSpan, 86.5, 0.6, skillText, secondP, () => {
+            addDot(secondP);
+            frontEndIntelisense();
+            setTimeout(() => {
+                completeFrontendCode();
+                drawTree(frontendText, frontendEndTree);
+            }, 1000);
+        });
+    }, 4800);
+};
+
+function skillAnimation(span, startingPoint, amountOfMovement, text, container, callback) {
+    const skillIntelisense = document.getElementById('skillIntelisense');
+    skillIntelisense.style.display = 'flex';
+    i=0;
+    function animate() {
+        if (i < text.length) {
+            span.innerHTML += text.charAt(i);
+            skillIntelisense.style.left = (startingPoint + (i * amountOfMovement)) + "rem";
+            i++;
+            setTimeout(animate, speed);
+        } else {
+            animationFinished = true;
+            skillIntelisense.style.display = "none";
+            if (callback) callback();
+        }
+    }
+
+    animate();
+}
+
+function addDot(container) {
+    if (animationFinished) {
+        const span = document.createElement('span');
+        span.innerHTML = ".";
+        container.appendChild(span);
+        const intelisense = document.getElementById('intelisense');
+        intelisense.style.display = 'flex';
+    } else {
+        setTimeout(() => addDot(container), speed);
+    }
+}
+
+function completeBackendCode() {
+    const firstSkill = document.getElementById('backEndP');
+    const intelisense = document.getElementById('intelisense');
+    const span = document.createElement('span');
+    const braces = document.createElement('span');
+    braces.innerHTML = "()";
+    span.className = "text-yellow-200";
+    span.innerHTML = "displayBackEnd";
+    firstSkill.appendChild(span);
+    firstSkill.appendChild(braces);
+    intelisense.style.display = "none";
+}
+
+function frontEndIntelisense() {
+    const intelisense = document.getElementById('intelisense');
+    const backend = document.getElementById('displayBack');
+    const frontend = document.getElementById('displayFront');
+    backend.style.backgroundColor = "black";
+    frontend.style.backgroundColor = "#6b7280";
+    intelisense.style.display = 'flex';
+    intelisense.style.left = "90.5rem";
+}
+
+function completeFrontendCode() {
+    const firstSkill = document.getElementById('frontEndP');
+    const intelisense = document.getElementById('intelisense');
+    const span = document.createElement('span');
+    const braces = document.createElement('span');
+    braces.innerHTML = "()";
+    span.className = "text-yellow-200";
+    span.innerHTML = "displayBackEnd";
+    firstSkill.appendChild(span);
+    firstSkill.appendChild(braces);
+    intelisense.style.display = "none";
+}
+
+function drawTree(text, container) {
+    let index = 0;
+    function draw() {
+        if (index < text.length) {
+            if (text.charAt(index) == "5") {
+                container.innerHTML += "<br>";
+            } else {
+                container.innerHTML += text.charAt(index);
+            }
+            index++;
+            setTimeout(draw, 10);
+        }
+    }
+    draw();
+}
