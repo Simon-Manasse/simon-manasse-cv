@@ -117,7 +117,8 @@ export const navbarAnimation = () => {
 };
 
 
-let alreadyScrolled = false;
+let skillAnimationDone = false;
+let educationAnimationDone = false
 
 export function navbarScrollAnimation() {
     let dots = document.getElementsByClassName('navBar');
@@ -135,10 +136,26 @@ export function navbarScrollAnimation() {
             div.style.opacity = "0"
             div.style.top = "50rem"
         }
-        if(window.scrollY >2800 && !alreadyScrolled){
+        if(window.scrollY >1770 && !educationAnimationDone){
+            cardFloatInAnimation()
+            educationAnimationDone = true;
+        }
+        if(window.scrollY >2800 && !skillAnimationDone){
             typeAnimation();
         }
     }
+}
+function cardFloatInAnimation(){
+   const topCard = document.getElementById('hz')
+   const bottomCard = document.getElementById('faller')
+   topCard.style.transition = "all 1.5s"
+   bottomCard.style.transition = "all 1.5s"
+   topCard.style.top = "8rem"
+   bottomCard.style.top="9rem"
+   topCard?.addEventListener('transitionend',()=>{
+    topCard.style.transition = "all 0.7s"
+   bottomCard.style.transition = "all 0.7s"
+   })
 }
 
 function navbarStyleChange(dots, id) {
@@ -306,7 +323,7 @@ export const nextSkill = () => {
 };
 
 let i = 0;
-let speed = 150;
+let speed = 100;
 let animationFinished = false;
 const skillText = "Skills";
 const backendText = "├── docker5├── git5│   └── versionControl.experience 5├── linux5│   ├── bash5│   │   └── microserviceGenerator.sh 5│   ├── c5│   │   └── linuxTweeking.c 5│   └── daily.os 5├── nodeJs5├── oop5│   ├── cSharp5│   ├── java5│   └── typeScript5│       └── curiousVillage.ts 5└── pandas5    └── python5        └── dataScience.py"
@@ -314,7 +331,7 @@ const frontendText = "├── blender5│   ├── hackathon.blend 5│�
 
 
 const typeAnimation = () => {
-    alreadyScrolled=true;
+    skillAnimationDone=true;
     const firstSpan = document.getElementById('firstSkillSpan');
     const secondSpan = document.getElementById('secondSkillSpan');
     const backEndTree = document.getElementById('backEndTree');
@@ -327,7 +344,7 @@ const typeAnimation = () => {
         setTimeout(() => {
             completeBackendCode();
             drawTree(backendText, backEndTree);
-        }, 1000);
+        }, 500);
     });
 
     setTimeout(() => {
@@ -339,7 +356,7 @@ const typeAnimation = () => {
             setTimeout(() => {
                 completeFrontendCode();
                 drawTree(frontendText, frontendEndTree);
-            }, 1000);
+            }, 500);
         });
     }, 4800);
 };

@@ -36,6 +36,7 @@
             <a href="#Hobbies" id="5" class="navBar"><div class=" w-[14px] h-[14px]  z-[555555] bg-[#3d97a8] rounded-full"></div></a>
         </div>
     
+
         <Welcome/>
         <Projects/>
         <Education/>

@@ -6,7 +6,7 @@
 
 <div class=" w-[25rem]">
     <div class=" h-[15rem] flex justify-center items-center">
-        <img class="h-[15rem] " src="src/img/logos/{imageName}" alt="" />
+        <img class="h-[15rem] " src="src/img/hobbies/{imageName}" alt="" />
     </div>
 
     <div class="flex justify-center items-center">
