@@ -7,7 +7,6 @@
     import Education from "$lib/components/pages/Education.svelte";
     import Hobbies from "$lib/components/pages/Hobbies.svelte";
     import Skills from "$lib/components/pages/Skills.svelte";
-
     onMount(()=>{
     init();
     navbarAnimation()

@@ -1,5 +1,5 @@
 <script>
-    import Skill from "../Skill.svelte";
+
 </script>
 
 <section class="ScrollPics" id="Skills">

@@ -1,6 +1,7 @@
 <script>
 
    import ProjectCards from "../ProjectCards.svelte";
+   import boat from "../../../img/boat.png"
 
 </script>
 <section class="ScrollPics " id="Projects">

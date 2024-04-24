@@ -33,13 +33,49 @@
     "isEntry": true,
     "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js"
   },
+  "src/img/boat.png": {
+    "file": "_app/immutable/assets/boat.3b6bbd74.png",
+    "src": "src/img/boat.png"
+  },
+  "src/img/hobbies/dnd.png": {
+    "file": "_app/immutable/assets/dnd.e49313c2.png",
+    "src": "src/img/hobbies/dnd.png"
+  },
+  "src/img/hobbies/drawing.jpg": {
+    "file": "_app/immutable/assets/drawing.d0760674.jpg",
+    "src": "src/img/hobbies/drawing.jpg"
+  },
+  "src/img/hobbies/folkDance.png": {
+    "file": "_app/immutable/assets/folkDance.6df9c66d.png",
+    "src": "src/img/hobbies/folkDance.png"
+  },
+  "src/img/hobbies/gaming.png": {
+    "file": "_app/immutable/assets/gaming.6ebc4c49.png",
+    "src": "src/img/hobbies/gaming.png"
+  },
+  "src/img/hobbies/languages.png": {
+    "file": "_app/immutable/assets/languages.88a4ed83.png",
+    "src": "src/img/hobbies/languages.png"
+  },
+  "src/img/hobbies/piano.png": {
+    "file": "_app/immutable/assets/piano.88c7ce7f.png",
+    "src": "src/img/hobbies/piano.png"
+  },
+  "src/img/hobbies/psychology.png": {
+    "file": "_app/immutable/assets/psychology.c80c671e.png",
+    "src": "src/img/hobbies/psychology.png"
+  },
+  "src/img/hobbies/reading.png": {
+    "file": "_app/immutable/assets/reading.e291d95f.png",
+    "src": "src/img/hobbies/reading.png"
+  },
   "src/routes/+layout.css": {
-    "file": "_app/immutable/assets/_layout.ccdcd1e4.css",
+    "file": "_app/immutable/assets/_layout.3e38ae5f.css",
     "src": "src/routes/+layout.css"
   },
   "src/routes/+layout.svelte": {
     "css": [
-      "_app/immutable/assets/_layout.ccdcd1e4.css"
+      "_app/immutable/assets/_layout.3e38ae5f.css"
     ],
     "file": "entries/pages/_layout.svelte.js",
     "imports": [
@@ -49,6 +85,16 @@
     "src": "src/routes/+layout.svelte"
   },
   "src/routes/+page.svelte": {
+    "assets": [
+      "_app/immutable/assets/dnd.e49313c2.png",
+      "_app/immutable/assets/drawing.d0760674.jpg",
+      "_app/immutable/assets/folkDance.6df9c66d.png",
+      "_app/immutable/assets/gaming.6ebc4c49.png",
+      "_app/immutable/assets/languages.88a4ed83.png",
+      "_app/immutable/assets/piano.88c7ce7f.png",
+      "_app/immutable/assets/psychology.c80c671e.png",
+      "_app/immutable/assets/reading.e291d95f.png"
+    ],
     "file": "entries/pages/_page.svelte.js",
     "imports": [
       "_index.js"
