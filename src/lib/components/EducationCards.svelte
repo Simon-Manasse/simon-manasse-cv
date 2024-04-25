@@ -1,4 +1,5 @@
 <script>
+    //xd
     export let id;
     export let image;
     export let title;
