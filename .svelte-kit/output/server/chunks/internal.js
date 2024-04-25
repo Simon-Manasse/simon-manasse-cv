@@ -1,7 +1,11 @@
-import { c as create_ssr_component, a as setContext, v as validate_component, m as missing_component } from "./index.js";
+import { c as create_ssr_component, a as setContext, v as validate_component, m as missing_component } from "./ssr.js";
 let base = "";
 let assets = base;
 const initial = { base, assets };
+function override(paths) {
+  base = paths.base;
+  assets = paths.assets;
+}
 function reset() {
   base = initial.base;
   assets = initial.assets;
@@ -10,14 +14,22 @@ function set_assets(path) {
   assets = initial.assets = path;
 }
 let public_env = {};
+let safe_public_env = {};
 function set_private_env(environment) {
 }
 function set_public_env(environment) {
   public_env = environment;
 }
+function set_safe_public_env(environment) {
+  safe_public_env = environment;
+}
 function afterUpdate() {
 }
+let prerendering = false;
 function set_building() {
+}
+function set_prerendering() {
+  prerendering = true;
 }
 const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { stores } = $$props;
@@ -47,16 +59,14 @@ const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.data_1(data_1);
   let $$settled;
   let $$rendered;
+  let previous_head = $$result.head;
   do {
     $$settled = true;
+    $$result.head = previous_head;
     {
       stores.page.set(page);
     }
-    $$rendered = `
-
-
-
-${constructors[1] ? `${validate_component(constructors[0] || missing_component, "svelte:component").$$render(
+    $$rendered = `  ${constructors[1] ? `${validate_component(constructors[0] || missing_component, "svelte:component").$$render(
       $$result,
       { data: data_0, this: components[0] },
       {
@@ -90,17 +100,19 @@ ${constructors[1] ? `${validate_component(constructors[0] || missing_component, 
         }
       },
       {}
-    )}`}
-
-${``}`;
+    )}`} ${``}`;
   } while (!$$settled);
   return $$rendered;
 });
+function set_read_implementation(fn) {
+}
+function set_manifest(_) {
+}
 const options = {
+  app_dir: "_app",
   app_template_contains_nonce: false,
   csp: { "mode": "auto", "directives": { "upgrade-insecure-requests": false, "block-all-mixed-content": false }, "reportOnly": { "upgrade-insecure-requests": false, "block-all-mixed-content": false } },
   csrf_check_origin: true,
-  track_server_fetches: false,
   embedded: false,
   env_public_prefix: "PUBLIC_",
   env_private_prefix: "",
@@ -193,20 +205,27 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "1b5pcvq"
+  version_hash: "1tbzq0l"
 };
-function get_hooks() {
+async function get_hooks() {
   return {};
 }
 export {
   assets as a,
   base as b,
-  set_public_env as c,
-  set_assets as d,
-  set_building as e,
+  options as c,
+  set_private_env as d,
+  prerendering as e,
+  set_public_env as f,
   get_hooks as g,
-  options as o,
+  set_safe_public_env as h,
+  set_assets as i,
+  set_building as j,
+  set_manifest as k,
+  set_prerendering as l,
+  set_read_implementation as m,
+  override as o,
   public_env as p,
   reset as r,
-  set_private_env as s
+  safe_public_env as s
 };

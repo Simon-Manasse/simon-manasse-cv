@@ -12,7 +12,7 @@
     >
         <img
             class="h-[100%] mt-0 top-0 w-[100%] object-cover rounded-t-lg transition-all duration-75"
-            src="src/img/{imageName}"
+            src="img/{imageName}"
             alt=""
         />
 

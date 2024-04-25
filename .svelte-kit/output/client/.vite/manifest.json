@@ -1,124 +1,81 @@
 {
   ".svelte-kit/generated/client-optimized/app.js": {
+    "file": "_app/immutable/entry/app.KgqUt0Gq.js",
+    "name": "entry/app",
+    "src": ".svelte-kit/generated/client-optimized/app.js",
+    "isEntry": true,
+    "imports": [
+      "_scheduler.BeaK0CkN.js",
+      "_index.BZRb3Aqr.js"
+    ],
     "dynamicImports": [
       ".svelte-kit/generated/client-optimized/nodes/0.js",
       ".svelte-kit/generated/client-optimized/nodes/1.js",
-      ".svelte-kit/generated/client-optimized/nodes/2.js",
-      ".svelte-kit/generated/client-optimized/nodes/3.js"
-    ],
-    "file": "_app/immutable/entry/app.cd15381c.js",
-    "imports": [
-      "_index.8528c4bc.js"
-    ],
-    "isEntry": true,
-    "src": ".svelte-kit/generated/client-optimized/app.js"
-  },
-  ".svelte-kit/generated/client-optimized/nodes/0.css": {
-    "file": "_app/immutable/assets/0.b41213e6.css",
-    "src": ".svelte-kit/generated/client-optimized/nodes/0.css"
-  },
-  ".svelte-kit/generated/client-optimized/nodes/0.js": {
-    "css": [
-      "_app/immutable/assets/0.b41213e6.css"
-    ],
-    "file": "_app/immutable/nodes/0.7942e057.js",
-    "imports": [
-      "_index.8528c4bc.js"
-    ],
-    "isDynamicEntry": true,
-    "isEntry": true,
-    "src": ".svelte-kit/generated/client-optimized/nodes/0.js"
-  },
-  ".svelte-kit/generated/client-optimized/nodes/1.js": {
-    "file": "_app/immutable/nodes/1.f1e6a2b2.js",
-    "imports": [
-      "_index.8528c4bc.js",
-      "_singletons.51c4c753.js"
-    ],
-    "isDynamicEntry": true,
-    "isEntry": true,
-    "src": ".svelte-kit/generated/client-optimized/nodes/1.js"
-  },
-  ".svelte-kit/generated/client-optimized/nodes/2.js": {
-    "assets": [
-      "_app/immutable/assets/dnd.e49313c2.png",
-      "_app/immutable/assets/drawing.d0760674.jpg",
-      "_app/immutable/assets/folkDance.6df9c66d.png",
-      "_app/immutable/assets/gaming.6ebc4c49.png",
-      "_app/immutable/assets/languages.88a4ed83.png",
-      "_app/immutable/assets/piano.88c7ce7f.png",
-      "_app/immutable/assets/psychology.c80c671e.png",
-      "_app/immutable/assets/reading.e291d95f.png"
-    ],
-    "file": "_app/immutable/nodes/2.bd2141cd.js",
-    "imports": [
-      "_index.8528c4bc.js"
-    ],
-    "isDynamicEntry": true,
-    "isEntry": true,
-    "src": ".svelte-kit/generated/client-optimized/nodes/2.js"
-  },
-  ".svelte-kit/generated/client-optimized/nodes/3.js": {
-    "file": "_app/immutable/nodes/3.ede45974.js",
-    "imports": [
-      "_index.8528c4bc.js"
-    ],
-    "isDynamicEntry": true,
-    "isEntry": true,
-    "src": ".svelte-kit/generated/client-optimized/nodes/3.js"
-  },
-  "_index.8528c4bc.js": {
-    "file": "_app/immutable/chunks/index.8528c4bc.js"
-  },
-  "_singletons.51c4c753.js": {
-    "file": "_app/immutable/chunks/singletons.51c4c753.js",
-    "imports": [
-      "_index.8528c4bc.js"
+      ".svelte-kit/generated/client-optimized/nodes/2.js"
     ]
   },
-  "node_modules/@sveltejs/kit/src/runtime/client/start.js": {
-    "file": "_app/immutable/entry/start.7c73b613.js",
-    "imports": [
-      "_index.8528c4bc.js",
-      "_singletons.51c4c753.js"
-    ],
+  ".svelte-kit/generated/client-optimized/nodes/0.js": {
+    "file": "_app/immutable/nodes/0.B2AVAekp.js",
+    "name": "nodes/0",
+    "src": ".svelte-kit/generated/client-optimized/nodes/0.js",
     "isEntry": true,
-    "src": "node_modules/@sveltejs/kit/src/runtime/client/start.js"
+    "isDynamicEntry": true,
+    "imports": [
+      "_scheduler.BeaK0CkN.js",
+      "_index.BZRb3Aqr.js"
+    ],
+    "css": [
+      "_app/immutable/assets/0.zocRcXKJ.css"
+    ]
   },
-  "src/img/boat.png": {
-    "file": "_app/immutable/assets/boat.3b6bbd74.png",
-    "src": "src/img/boat.png"
+  ".svelte-kit/generated/client-optimized/nodes/1.js": {
+    "file": "_app/immutable/nodes/1.BhZCFMMf.js",
+    "name": "nodes/1",
+    "src": ".svelte-kit/generated/client-optimized/nodes/1.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_scheduler.BeaK0CkN.js",
+      "_index.BZRb3Aqr.js",
+      "_entry.DJjiPihR.js"
+    ]
   },
-  "src/img/hobbies/dnd.png": {
-    "file": "_app/immutable/assets/dnd.e49313c2.png",
-    "src": "src/img/hobbies/dnd.png"
+  ".svelte-kit/generated/client-optimized/nodes/2.js": {
+    "file": "_app/immutable/nodes/2.D0cVF1-E.js",
+    "name": "nodes/2",
+    "src": ".svelte-kit/generated/client-optimized/nodes/2.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_scheduler.BeaK0CkN.js",
+      "_index.BZRb3Aqr.js"
+    ]
   },
-  "src/img/hobbies/drawing.jpg": {
-    "file": "_app/immutable/assets/drawing.d0760674.jpg",
-    "src": "src/img/hobbies/drawing.jpg"
+  "_entry.DJjiPihR.js": {
+    "file": "_app/immutable/chunks/entry.DJjiPihR.js",
+    "name": "entry",
+    "imports": [
+      "_scheduler.BeaK0CkN.js"
+    ]
   },
-  "src/img/hobbies/folkDance.png": {
-    "file": "_app/immutable/assets/folkDance.6df9c66d.png",
-    "src": "src/img/hobbies/folkDance.png"
+  "_index.BZRb3Aqr.js": {
+    "file": "_app/immutable/chunks/index.BZRb3Aqr.js",
+    "name": "index",
+    "imports": [
+      "_scheduler.BeaK0CkN.js"
+    ]
   },
-  "src/img/hobbies/gaming.png": {
-    "file": "_app/immutable/assets/gaming.6ebc4c49.png",
-    "src": "src/img/hobbies/gaming.png"
+  "_scheduler.BeaK0CkN.js": {
+    "file": "_app/immutable/chunks/scheduler.BeaK0CkN.js",
+    "name": "scheduler"
   },
-  "src/img/hobbies/languages.png": {
-    "file": "_app/immutable/assets/languages.88a4ed83.png",
-    "src": "src/img/hobbies/languages.png"
-  },
-  "src/img/hobbies/piano.png": {
-    "file": "_app/immutable/assets/piano.88c7ce7f.png",
-    "src": "src/img/hobbies/piano.png"
-  },
-  "src/img/hobbies/psychology.png": {
-    "file": "_app/immutable/assets/psychology.c80c671e.png",
-    "src": "src/img/hobbies/psychology.png"
-  },
-  "src/img/hobbies/reading.png": {
-    "file": "_app/immutable/assets/reading.e291d95f.png",
-    "src": "src/img/hobbies/reading.png"
+  "node_modules/@sveltejs/kit/src/runtime/client/entry.js": {
+    "file": "_app/immutable/entry/start.BGfvvAwc.js",
+    "name": "entry/start",
+    "src": "node_modules/@sveltejs/kit/src/runtime/client/entry.js",
+    "isEntry": true,
+    "imports": [
+      "_entry.DJjiPihR.js"
+    ]
   }
 }
