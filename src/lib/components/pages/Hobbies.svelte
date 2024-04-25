@@ -1,4 +1,5 @@
 <script>
+    // lamo
     import Hobby from "../Hobby.svelte";
 </script>
 <section class="ScrollPics " id="Hobbies">
