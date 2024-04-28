@@ -31,7 +31,7 @@
             <ProjectCards
             imageName ="hackathon.jpeg"
             projectName = "Hackathon"
-            description = "During a recent Hackathon, our team innovated by crafting a captivating 3D interactive screensaver for JRCZ. This screensaver featured a luminous globe that dynamically expanded to reveal the facilities of the building whenever triggered by clapping."
+            description = "During a recent Hackathon, our team innovated by crafting a captivating 3D interactive screensaver for JRCZ in 24 hours. This screensaver featured a glowing globe that dynamically expanded to reveal the facilities of the building whenever triggered by clapping."
             />
             <ProjectCards
             imageName = "pco.png"
