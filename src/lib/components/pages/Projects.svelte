@@ -8,8 +8,8 @@
     <!-- SC=ScrollPics -->
     <div class="SC_inner bg-zinc-900" id="section_1">
         <figure></figure>
-        <h1 class="SC_title z-10 text-[8rem] text-white justify-center">Projects</h1>
-        <div id="cardContainer" class="SC_content top-[50rem] opacity-0 z-[49] px-[38rem] items-center text-4xl gap-[20rem] flex overflow-x-scroll no-scrollbar snap-x snap-mandatory">
+        <h1 class="SC_title z-10 sm:text-[8rem] text-[4rem] text-white justify-center">Projects</h1>
+        <div id="cardContainer" class="SC_content sm:top-[50rem] top-[0rem] opacity-0 z-[49] sm:px-[38rem] items-center sm:text-4xl sm:gap-[20rem] gap-[2rem] flex overflow-x-scroll no-scrollbar snap-x snap-mandatory">
             <ProjectCards
             imageName ="boat.png"
             projectName = "Boat Parking Rent"
@@ -37,7 +37,7 @@
             />
             <ProjectCards
             imageName = "pco.png"
-            projectName = "Program- & Career Orientation"
+            projectName = "PCO"
             description = "I've launched my inaugural portfolio website, marking an exciting step in my journey. Through this project, I've gained valuable insights into articulating my strengths and weaknesses, and honed my skills in crafting a website that authentically represents who I am as an individual."
             />
         </div>

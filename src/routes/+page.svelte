@@ -27,7 +27,7 @@
 
     <!-- Navigation -->
 
-        <div class="  fixed z-50 h-screen  flex flex-col right-5 gap-4 justify-center float-right border-none items-center">
+        <div class=" hidden  fixed z-50 h-screen  sm:flex flex-col right-5 gap-4 justify-center float-right border-none items-center">
             <a href="#Home" id="1" class="navBar"><div class=" w-[30px] h-[30px]  z-[555555] bg-white rounded-full"></div></a>
             <a href="#Projects" id="2" class="navBar"><div class=" w-[20px] h-[20px]  z-[555555] bg-[#e5d9e7] rounded-full"></div></a>
             <a href="#Education" id="3" class="navBar"><div class=" w-[18px] h-[18px]  z-[555555] bg-[#b3bad9] rounded-full"></div></a>
